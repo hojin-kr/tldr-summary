@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel=”shortcut icon” href=”static/favicon.ico”>
+  <title id="title" class="locale title"></title>
+</head>
+<body>
+    <img id="icon" src="https://storage.googleapis.com/url-358416.appspot.com/static/url-icon.png" alt="none img">
+    <H3 id="h1" class="locale h1"></H3>
+    <p id="h2" class="locale h2"></p>
+    <p id="h3" class="locale h3"></p>
+    <br>
+    <div id="create">
+        <label for="input" class="locale label-input"></label>
+        <textarea id="input" class="locale input input-warp" name="" cols="30" rows="10"></textarea>
+        <div id="summary-grade">
+            <button id="grade-1" class="btn-grade locale btn-grade-1 btn-selected" value="1"></button>
+            <button id="grade-3" class="btn-grade locale btn-grade-3" value="3"></button>
+            <button id="grade-10" class="btn-grade locale btn-grade-10" value="10"></button>
+            <button id="grade-30" class="btn-grade locale btn-grade-30" value="30"></button>
+        </div>
+        <button id="btn-input" class="locale btn-input btn-full-large"></button>
+    </div>
+    <div id="result">
+        <label for="output" class="locale label-output"></label>
+        <textarea id="output" class="locale input input-warp" name="" cols="30" rows="10"></textarea>
+        <button id="btn-copy" class="locale btn-copy btn-full-large"></button>
+        <button id="btn-copied" class="locale btn-copied btn-full-large"></button>
+    </div>
+    <footer>
+        Mailbox: jhj377@gmail.com
+    </footer>
+</body>
+</html>
+
+<script>
+
+    let Domain = window.location.protocol + "//" + window.location.hostname
+
+    let ContryCode = "KR"
+    let now = new Date()
+    let page = 0
+    let grade = 1
+
+    let locales = {
+        "US":{
+            "title":"TL;DR : summarizing",
+            "h1":"TL; DR",
+            "h2":"Too Long; Didn't Read",
+            "h3":"Share as you want, summarizing, and meaningful.",
+            "input":"Orion has an advanced guidance, navigation, and control (GN&C) system, responsible for always knowing where the spacecraft is located in space, which way it’s pointed, and where it’s going. It primarily uses two star trackers, sensitive cameras that take pictures of the star field around Orion, the Moon, and Earth, and compares the pictures to its built-in map of stars. The Optical navigation camera is a secondary camera that takes images of the Moon and Earth to help orient the spacecraft by looking at the size and position of the celestial bodies in the image. At several times during the mission, the optical navigation camera will be tested to certify it for use on future flights. Once certified, the camera also can help Orion autonomously return home if it were to lose communication with Earth. (https://www.nasa.gov/feature/additional-artemis-i-test-objectives-to-provide-added-confidence-in-capabilities-0)",
+            "source":"The Optical navigation camera is a secondary camera that takes images of the Moon and Earth to help orient the spacecraft by looking at the size and position of the celestial bodies in the image",
+            "btn-input":"Summarize 👏",
+            "btn-copy":"to copy",
+            "btn-copied":"Copied, paste wherever you want",
+            "article-title-0":"How to use",
+            "article-desc-0":"",
+            "article-title-1":"Title",
+            "article-desc-1":"Desc",
+            "label-input":"Too Long; Didn't Read.",
+            "label-source":"Cool story, bro",
+            "label-output":"Summary",
+            "label-preview":"Preview 👀",
+            "how-title":"How to use 🎉",
+            "how-desc-0":"Step1. paste long link",
+            "how-desc-1":"Step2. create custom links",
+            "how-desc-2":"Step3. Preview 👀 & cut down 👏",
+            "how-desc-3":"Step4. Share your link anywhere 🔗",
+            "benefit-title":"Advantages",
+            "benefit-desc-0":"random character 🙆🏻‍♂️ custom link 🙆‍♀️",
+            "benefit-desc-1":"Totally free, service fee Zero 💸",
+            "benefit-desc-2":"Unlimited Link Creation, Unlimited Traffic 📈",
+            "article-title":"Usage example",
+            "article-more":"More",
+            "btn-share":"Share",
+            "alert-link-check":"Watch your link",
+            "already-use":"already used",
+            "more-last":"Last news. thank you :)",
+            "ad-cs-title":"Advertisement",
+            "ad-cs-desc":"place your ad on this site : jhj377@gmail.com",
+            "too-short-text": "This article is not suitable for summarizing.",
+            "btn-grade-1":"1 lines",
+            "btn-grade-3":"3 lines",
+            "btn-grade-10":"10 lines",
+            "btn-grade-30":"30 lines",
+        },
+        'KR':{
+            "title":"TL;DR : 짧게 요약해서!",
+            "h1":"TL; DR",
+            "h2":"Too Long; Didn't Read",
+            "h3":"긴 글을 짧게 요약해서 공유하세요!",
+            "input":"반면, 애플은 광고 정책 변동의 영향으로 자체 광고 사업이 이전보다 크게 성장하고 있어요. 애플이 가장 큰 수혜자가 될 것이라는 초기 예측이 맞은 거죠. 애플의 2021년 광고 사업 매출은 2020년 대비 238% 증가한 37억 달러(4조 4115억 원)을 기록했어요. 그중에서도 서치광고 부문은 전년 대비 264% 증가한 35억 달러(4조 1737억 원)의 매출을 달성했고요. 서치 애드(Search Ads)란 앱스토어에서 사용자가 A라는 앱을 검색했을 때, 관련도 높은 광고주의 B앱을 최상단에 노출해주는 방식인데요. 2020년 10월 기준 17%에 불과했던 서치 애드의 아이폰 앱 다운로드 점유율이 1년 뒤인 2021년 10월(즉, ATT 조치가 시행되고 6개월 뒤)에는 58%까지 높아진 것으로 확인됐어요. 앞으로 광고 시장에서 애플의 서치 애드를 이용하려는 흐름은 점점 커질 것 같고요.(원문 : https://blog.toss.im/article/global-business-lounge-13)",
+            "source":"애플의 2021년 광고 사업 매출은 2020년 대비 238% 증가한 37억 달러(4조 4115억 원)을 기록했어요",
+            "btn-input":"줄이기 👏",
+            "btn-copy":"복사하기",
+            "btn-copied":"복사됨, 원하는곳에 붙여 넣으세요",
+            "article-title-0":"How to use",
+            "article-desc-0":"",
+            "article-title-1":"Title",
+            "article-desc-1":"Desc",
+            "label-input":"긴 글",
+            "label-source":"커스텀 링크",
+            "label-output":"요약",
+            "label-preview":"링크 미리보기 👀",
+            "how-title":"이용 방법 🎉",
+            "how-desc-0":"Step1. 긴 링크를 붙여넣기",
+            "how-desc-1":"Step2. 커스텀 링크를 작성",
+            "how-desc-2":"Step3. 미리보기 👀 & 줄이기 👏",
+            "how-desc-3":"Step4. 링크를 어디든 공유하세요 🔗",
+            "benefit-title":"장점",
+            "benefit-desc-0":"랜덤 문자 🙆🏻‍♂️ 커스텀 링크 🙆‍♀️",
+            "benefit-desc-1":"완전 무료, 서비스 이용료 Zero 💸",
+            "benefit-desc-2":"제한 없는 링크 생성, 무제한 트래픽 📈",
+            "article-title":"이용 예시",
+            "article-more":"더 보기",
+            "btn-share":"공유하기",
+            "alert-link-check":"링크를 확인해주세요",
+            "already-use":"이미 사용중인 링크",
+            "more-last":"마지막 뉴스입니다. 감사합니다 :)",
+            "ad-cs-title":"광고",
+            "ad-cs-desc":"광고 문의 : jhj377@gmail.com",
+            "too-short-text":"요약하기에 적합하지 않은 글입니다",
+            "btn-grade-1":"1줄",
+            "btn-grade-3":"3줄",
+            "btn-grade-10":"10줄",
+            "btn-grade-30":"30줄",
+        },
+    }
+
+
+    init()
+
+    function init() {
+        $("#result").hide()
+        $("#btn-copied").hide()
+        locale()
+    }
+
+    function locale() {
+        getStaticText(ContryCode)
+        $.ajax({
+        method: "GET",
+        url: "https://api.ip.pe.kr/json",
+        })
+        .done(function( msg ) {
+            if (msg.country_code != undefined && msg.country_code == "US") {
+                ContryCode = "US"
+                getStaticText(ContryCode)
+            }
+        })
+    }
+
+  $(document).on("click", ".btn-share", (event)=>{
+    $(event.target).prev().select();
+    document.execCommand( 'Copy' );
+    alert(locales[ContryCode]["btn-copied"])
+  });
+
+  // btn copy
+  $("#btn-copy").on("click", ()=>{
+    $("#output").select();
+    document.execCommand( 'Copy' );
+    $("#btn-copy").hide()
+    $("#btn-copied").show()
+  })
+
+  $("#btn-copied").on("click", ()=>{
+    $("#output").select();
+    document.execCommand( 'Copy' );
+  })
+
+  $("#source").on("keyup", ()=>{
+    $("#preview").val(Domain+"/"+$("#source").val())
+  })
+
+  $("#btn-random").on("click", ()=>{
+    setRandString()
+  })
+
+  function setRandString() {
+    $("#source").val(generateRandomString(5))
+    $("#preview").val(Domain+"/"+$("#source").val())
+  }
+
+  // validater URL
+  function validaterURL(source, input) {
+    if (input == "") {
+        alert(locales[ContryCode]["alert-link-check"])
+        return false
+    }
+    if (source == "") {
+        setRandString()
+    }
+    return true
+  }
+
+  function createURL(source, input) {
+    if (!validaterURL(source, input)) {
+        return 1;
+    }
+    // force https
+    input = input.replace(/http:\/\//g, "https://")
+    // attach https
+    if (input.substr(0, 8) != "https://") {
+        input = "https://" + input
+    }
+    // escape space
+    source = source.replace(/ /g, "%20")
+    $.ajax({
+        method: "POST",
+        url: "https://tl-dr.in",
+        data: { source: source, input: input }
+    })
+    .done(function( msg ) {
+        if (msg == 500) {
+            alert(locales[ContryCode]["already-use"])
+            return 1
+        }
+        // build result URL
+        resultURL = Domain+"/"+source
+        // replace space escape
+        resultURL = resultURL.replace(/\%20/g, " ")
+        $("#output").val(resultURL)
+        showResult()
+    })
+  }
+
+  function showResult() {
+    $("#create").hide()
+    $("#result").show()
+  }
+
+  const generateRandomString = (num) => {
+  const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_-';
+  let result = '';
+  const charactersLength = characters.length;
+  for (let i = 0; i < num; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return result;
+}
+
+  function getStaticText(countryCode = "KR") {
+    $(".locale.title").text(locales[countryCode]["title"])
+    $(".locale.h1").text(locales[countryCode]["h1"])
+    $(".locale.h2").text(locales[countryCode]["h2"])
+    $(".locale.h3").text(locales[countryCode]["h3"])
+    $(".locale.input").attr("placeholder",locales[countryCode]["input"])
+    $(".locale.source").attr("placeholder",locales[countryCode]["source"])
+    $(".locale.btn-input").text(locales[countryCode]["btn-input"])
+    $(".locale.btn-copy").text(locales[countryCode]["btn-copy"])
+    $(".locale.btn-copied").text(locales[countryCode]["btn-copied"])
+    $(".locale.label-input").text(locales[countryCode]["label-input"])
+    $(".locale.label-source").text(locales[countryCode]["label-source"])
+    $(".locale.label-output").text(locales[countryCode]["label-output"])
+    $(".locale.label-preview").text(locales[countryCode]["label-preview"])
+    $("#preview").val(Domain+"/"+locales[countryCode]["source"])
+    $(".locale.how-title").text(locales[countryCode]["how-title"])
+    $(".locale.how-desc-0").text(locales[countryCode]["how-desc-0"])
+    $(".locale.how-desc-1").text(locales[countryCode]["how-desc-1"])
+    $(".locale.how-desc-2").text(locales[countryCode]["how-desc-2"])
+    $(".locale.how-desc-3").text(locales[countryCode]["how-desc-3"])
+    $(".locale.benefit-title").text(locales[countryCode]["benefit-title"])
+    $(".locale.benefit-desc-0").text(locales[countryCode]["benefit-desc-0"])
+    $(".locale.benefit-desc-1").text(locales[countryCode]["benefit-desc-1"])
+    $(".locale.benefit-desc-2").text(locales[countryCode]["benefit-desc-2"])
+    $(".locale.article-title").text(locales[countryCode]["article-title"])
+    $(".locale.article-more").text(locales[countryCode]["article-more"])
+    $(".locale.btn-share").text(locales[countryCode]["btn-share"])
+    $(".locale.ad-cs-title").text(locales[countryCode]["ad-cs-title"])
+    $(".locale.ad-cs-desc").text(locales[countryCode]["ad-cs-desc"])
+    $(".locale.btn-grade-1").text(locales[countryCode]["btn-grade-1"])
+    $(".locale.btn-grade-3").text(locales[countryCode]["btn-grade-3"])
+    $(".locale.btn-grade-10").text(locales[countryCode]["btn-grade-10"])
+    $(".locale.btn-grade-30").text(locales[countryCode]["btn-grade-30"])
+  }
+
+  $(".btn-grade").on("click", (event)=>{
+    $(".btn-grade").removeClass("btn-selected")
+    $(event.target).addClass("btn-selected")
+    grade = $(event.target).attr("value")
+  })
+
+  $("#btn-input").on("click", ()=>{
+        let input = $("#input").val()
+        let _grade = grade
+        let output = ""
+        let data = JSON.stringify({ input: input, output: output, grade: _grade })
+        $.ajax({
+            method: "PUT",
+            url: "summary",
+            dataType: "json",
+            contentType: "application/json",
+            data: data,
+            })
+            .done(function( msg ) {
+                console.log(msg)
+                let output = msg.output
+                if (output == "") {
+                    output = msg.input
+                    alert(locales[ContryCode]['too-short-text'])
+                }
+                $("#output").val(output)
+                showResult()
+            })
+            .fail((msg)=>{
+                console.log(msg)
+            })
+    })
+
+</script>

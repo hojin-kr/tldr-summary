@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F8;
+}
+#create {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#result {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#how {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3em;
+}
+#benefit {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#ad {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#article-title {
+    margin-top: 3em;
+}
+#article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.box {
+    margin: 0.5em;
+    align-items: center;
+    border: 0em solid aliceblue;
+    border-radius: 0.5em;
+    background-color: #FFFFFF;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D3;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+#notice {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content:space-around;
+    margin: 1em;
+}
+#h1 {
+    margin-bottom: 0.5em;
+}
+#h2 {
+    margin-top: 0px;
+    font-size: medium;
+}
+
+#icon {
+    border-radius: 0.5em;
+    width: 5em;
+    height: 5em;
+    margin: 1em;
+}
+
+#source-warp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-full-large {
+    border: 0em solid aliceblue;
+    border-radius: 0.5em;
+    background-color: #FFFFFF;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D3;
+    padding: 1.5em;
+    margin: 1em;
+    font-weight: 600;
+    color: #171D2E;
+    font-size: medium;
+}
+
+.btn-inner {
+    border: 0em solid aliceblue;
+    border-radius: 0.5em;
+    background-color: #FFFFFF;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D3;
+    padding: 1.5em;
+    margin: 0.3em 1em 1em 0em;
+    font-weight: 600;
+    color: #171D2E;
+}
+
+#summary-grade {
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    justify-content: space-around;
+}
+
+.btn-grade {
+    background-color: #FFFFFF;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D3;
+    border: 0em solid aliceblue;
+    border-radius: 0.5em;
+    padding: 1.5em;
+
+}
+
+.input-warp {
+    border: 0px;
+    border-radius: 0.5em;
+    padding: 1.5em;
+    margin: 0.3em 1em 1em 1em;
+    width: -webkit-fill-available;
+}
+
+.share-url {
+    border: 0px;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D3;
+    padding: 1.5em;
+    margin: 0.3em 1em 1em 1em;
+}
+
+button:hover, .btn-selected {
+    background-color: #171D2E;
+    color: #FFFFFF;
+}
+
+label {
+    font-size: medium;
+    margin-left: 1em;
+}
+a {
+    color: #171D2E;
+}
+footer {
+    margin: 1em;
+    padding: 1em;
+}

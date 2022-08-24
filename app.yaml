@@ -1,0 +1,9 @@
+runtime: python310 # or another supported version
+entrypoint: uvicorn main:app
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
