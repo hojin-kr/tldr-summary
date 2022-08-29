@@ -3,4 +3,6 @@
 
 [https://summarizer.tl-dr.in](https://summarizer.tl-dr.in)
 
-Provides a service that summarizes long-late articles in 1 line, 3 lines, 10 lines, and 30 lines using the open source Python sentence shortening module.
+Provides a service that summarizes long-late articles in 1 line, 3 lines, 10 lines, and 30 lines using the open source Python sentence shortening module.   
+
+TL; DR : Too Long; Didn't Read
